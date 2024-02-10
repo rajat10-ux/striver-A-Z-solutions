@@ -11,3 +11,5 @@ return false;
 }
 return true;   
 }
+//TC OF SOLUTION IS O(N) 
+//SC IS O(1)
