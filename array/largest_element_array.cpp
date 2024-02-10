@@ -9,3 +9,5 @@ int largestElement(vector<int> &arr, int n) {
     }
     return maxi;
 }
+//TC->O(n)
+//SC IS ->O(1)
