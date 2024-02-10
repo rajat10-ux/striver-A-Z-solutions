@@ -11,5 +11,5 @@ return false;
 }
 return true;   
 }
-//TC OF SOLUTION IS O(N) 
+//TC OF SOLUTION IS O(nums.size()) 
 //SC IS O(1)
