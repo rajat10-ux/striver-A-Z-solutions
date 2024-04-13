@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+public:
+int data;
+Node*left;
+Node*right;
+Node(int data){
+        this->data=data;
+        this->left=NULL;
+        this->right=NULL;
+}
+};
+Node*createTree(){
+        cout<<"enter data"<<endl;
+        int data;
+        cin>>data;
+        if(data==-1){
+                return NULL;
+        }
+        Node*newnode=new Node(data);
+        cout<<"left"<<newnode->data<<endl;
+        newnode->left=createTree();
+        cout<<"right"<<newnode->data<<endl;
+        newnode->right=createTree();
+        return newnode;
+}
+void preordertraversal(Node*root){
+        if(root==NULL) return;
+        cout<<root->data<<" ";
+        preordertraversal(root->left);
+        preordertraversal(root->right);
+}
+void postordertraversal(Node*root){
+                if(root==NULL) return;
+        preordertraversal(root->left);
+        preordertraversal(root->right);
+        cout<<root->data<<" ";
+}
+void inorderroottraversal(Node*root){
+            if(root==NULL) return;
+        preordertraversal(root->left);
+           cout<<root->data<<" ";
+        preordertraversal(root->right);
+}
+// void levelordertraverals(Node*root){
+//         queue<Node*>q;
+//         q.push(root);
+//         q.push(NULL);
+//         while (q.size()>1)
+//         {
+//                 Node*frontdata=q.front();
+//                 q.pop();
+//                 if(frontdata==NULL){
+//                         cout<<endl;
+//                         q.push(NULL);
+//                 }
+//                 else{
+//                      cout<<frontdata->data<<" "; 
+//                 if(frontdata->left!=NULL){
+//                         q.push(root->left);
+//                 }
+//                 if(frontdata->right!=NULL){
+//                         q.push(root->right);
+//                 }
+//           }
+//       } 
+// }
+int main(){
+Node*root=createTree();
+inorderroottraversal(root);
+cout<<endl;
+preordertraversal(root);
+cout<<endl;
+postordertraversal(root);
+return 0;
+}
