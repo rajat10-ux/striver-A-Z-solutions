@@ -1,4 +1,5 @@
-  Node * inOrderSuccessor(Node *root, Node *x)
+//pressceeor in bst
+Node * inOrderSuccessor(Node *root, Node *x)
     {
         Node*curr=root;
         Node*ans=NULL;
@@ -13,3 +14,18 @@
         }
         return ans;
 }
+// succesort in bst
+ Node*findsucc(Node*root,int val){
+        Node*curr=root;
+        Node*ans=NULL;
+        while(curr){
+            if(curr->key > val){
+                ans=curr;
+                curr=curr->left;
+            }
+            else{
+                curr=curr->right;
+            }
+        }
+        return ans;
+    }
